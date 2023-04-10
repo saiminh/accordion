@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "create-block/accordion",
+  "version": "0.1.0",
+  "title": "Accordion",
+  "category": "widgets",
+  "icon": "list-view",
+  "description": "Accordion Block for FAQs and everything that needs to unfold",
+  "attributes": {
+    "header": {
+      "type": "string",
+      "source": "html",
+      "selector": "summary"
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "accordion",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
