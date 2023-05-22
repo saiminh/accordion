@@ -1,18 +1,18 @@
 .accordion {
   margin: 1em auto;
-  padding: 0;
+  padding: 0 0 0 1.5rem;
   position: relative;
   overflow: hidden;
+  background-color: var(--wp--preset--color--white);
+  border-radius: 2em;
 }
 .accordion + .accordion {
-  margin-top: 0;
+  margin-top: .5rem;
 }
 
 .accordion summary {
-  border-top: 1px solid;
-  padding: 1.5rem 4rem 1.5rem 0;
-  font-size: var(--wp--preset--font-size--20);
-  text-transform: uppercase;
+  padding: 1rem 1rem 1rem 0;
+  font-size: var(--wp--preset--font-size--body-s);
   position: relative;
   z-index: 2;
   cursor: pointer;
@@ -22,46 +22,31 @@
   &::marker,
   &::-webkit-details-marker{
     display: none; //Other browsers than FF get rid of arrow this way
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 1.5rem;
-    left: 0;
-    width: 1.5rem;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 22'%3E%3Cpath stroke='%23FA5A01' d='M8.426 0v21M15.484 13.906l-7.242 7.32-7.241-7.32'%3E%3C/path%3E%3C/svg%3E") no-repeat 0% 50%;
-    background-size: clamp(15px, 1vw, 30px);
-    transform-origin: 50% 50%;
-    transform: scaleY(-1);
-    transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    opacity: 0;
-  }
+  } 
   &:after {
-    content: '';
+    content: '↑';
     position: absolute;
     top: 0;
-    right: 0;
+    right: 1rem;
     width: 1.5em;
     height: 100%;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 22'%3E%3Cpath stroke='%23FA5A01' d='M8.426 0v21M15.484 13.906l-7.242 7.32-7.241-7.32'%3E%3C/path%3E%3C/svg%3E") no-repeat 50% 50%;
     background-size: clamp(15px, 1vw, 30px);
     transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-  &:hover {
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-  }
-  
+    transform-origin: 50% 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: scaleY(-1);
+  }  
 }
   
 .accordion .content {
   position: relative;
   z-index: 2;
-  padding: 0 4rem 1.5rem 2rem;
+  padding: 1em 1rem 1.5rem 0;
   transform-origin: 0 0;
   animation: none;
+  font-size: var(--wp--preset--font-size--body-l);
 
   & :first-child {
     margin-top: 0;
@@ -72,16 +57,8 @@
 }
 
 .accordion[open] {
-  & summary {
-    padding-left: 2rem;
-  }
-  & summary:before {
-    top: 0;
-    opacity: 1;
-  }
   & summary:after {
-    opacity: 0;
-    top: 1.5rem;
+    transform: scaleY(1);
   }
   & .content {
     animation: content-slide .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
