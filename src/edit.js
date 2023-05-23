@@ -14,18 +14,21 @@ export default function Edit( { attributes, setAttributes } ) {
   }
 
   return (
-    <details className='accordion'>
-      <RichText
-        { ...blockProps }
-        tagName="summary"
-        value={ attributes.header }
-        onChange={ onChangeHeader }
-        allowedFormats={ [ 'core/bold', 'core/italic' ] }
-        placeholder={ __( 'FAQ Question?', 'formo-accordion-summary' ) }
-      />
+    <div className='accordion'>
+      <div class="label">Accordion (opens/collapses)</div>
+      <div class="summary">
+        <RichText
+          { ...blockProps }
+          tagName="p"
+          value={ attributes.header }
+          onChange={ onChangeHeader }
+          allowedFormats={ [ 'core/bold', 'core/italic' ] }
+          placeholder={ __( 'FAQ Question?', 'formo-accordion-summary' ) }
+        />
+      </div>
       <div className='content'>
         <InnerBlocks />
       </div>
-    </details>
+    </div>
   );
 }

@@ -1,1 +1,1 @@
-
+.accordion .summary{cursor:pointer;font-size:var(--wp--preset--font-size--body-s);list-style:none;padding:1rem 1rem 1rem 0;position:relative;transition:padding .3s cubic-bezier(.165,.84,.44,1);z-index:2}.accordion .summary::-webkit-details-marker,.accordion .summary::marker{display:none}.accordion .summary:after{background-size:clamp(15px,1vw,30px);content:"↑";display:flex;flex-direction:column;height:100%;justify-content:center;position:absolute;right:1rem;top:0;transform:scaleY(-1);transform-origin:50% 50%;transition:all .3s cubic-bezier(.165,.84,.44,1);width:1.5em}
