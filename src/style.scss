@@ -11,10 +11,10 @@
 }
 
 .accordion summary {
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem 3rem 1rem 0;
   font-size: var(--wp--preset--font-size--body-s);
   position: relative;
-  z-index: 2;
+  z-index: 1;
   cursor: pointer;
   list-style: none; //FF fix to get rid of arrow
   transition: padding .3s cubic-bezier(0.165, 0.84, 0.44, 1);
