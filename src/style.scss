@@ -1,17 +1,19 @@
 .accordion {
   margin: 1em auto;
-  padding: 0 0 0 1.5rem;
+  padding: 0;
   position: relative;
   overflow: hidden;
   background-color: var(--wp--preset--color--white);
-  border-radius: 2em;
+  border-radius: 1.5rem;
 }
 .accordion + .accordion {
   margin-top: .5rem;
 }
 
 .accordion summary {
-  padding: 1rem 3rem 1rem 0;
+  position: relative;
+  z-index: 2;
+  padding: 1rem 3rem 1rem 1rem;
   font-size: var(--wp--preset--font-size--body-s);
   position: relative;
   z-index: 1;
@@ -42,10 +44,9 @@
   
 .accordion .content {
   position: relative;
-  z-index: 2;
-  padding: 1em 1rem 1.5rem 0;
+  z-index: 0;
+  padding: 1em 1rem 1.5rem 1rem;
   transform-origin: 0 0;
-  animation: none;
   font-size: var(--wp--preset--font-size--body-l);
 
   & :first-child {
@@ -57,29 +58,32 @@
 }
 
 .accordion[open] {
+  // & summary {
+  //   border-radius: 1.5rem 1.5rem 0 0;
+  // }
   & summary:after {
     transform: scaleY(1);
   }
-  & .content {
-    animation: content-slide .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-  }
+  // & .content {
+  //   animation: content-slide .3s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  // }
 }
-@keyframes bg-slide {
-  0% {
-    transform: translateY(-25%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes content-slide {
-  0% {
-    transform: translateY(-25%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+// @keyframes bg-slide {
+//   0% {
+//     transform: translateY(-25%);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+// @keyframes content-slide {
+//   0% {
+//     transform: translateY(-50%);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
 
 //override the gap 0 issue
 [class*="wp-container-"] > .accordion:not(:first-child) {
